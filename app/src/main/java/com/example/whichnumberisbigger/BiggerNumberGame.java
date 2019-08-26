@@ -7,9 +7,10 @@ public class BiggerNumberGame {
     private int lowerLimit;
     private int upperLimit;
 
-    public BiggerNumberGame(int number1, int upperLimit) {
+    public BiggerNumberGame(int lowerLimit, int upperLimit) {
         this.lowerLimit = lowerLimit;
         this.upperLimit = upperLimit;
+        generateRandomNumbers();
     }
 
     public void generateRandomNumbers() {
@@ -25,12 +26,25 @@ public class BiggerNumberGame {
         //store that in number2
 
 
-//    public String checkAnswer(int answer) {
-   //determine if the answer is right
+   public String checkAnswer(int answer) {
+       if ((number1 > number2 && answer == number1) || (number1 < number2 && answer == number2))
+       {
+           score++;
+           return "correct.";
+
+       }
+       else {
+           score--;
+           return "nope, that is, in fact, wrong.";
+
+       }
+
+
+       //determine if the answer is right
         //based on the values of number 1 and number 2
         // update the score accordingly
       //return a relevant message
-//  }
+ }
 
 
     public int getNumber2() {
